@@ -1,0 +1,60 @@
+Ponteiros:
+#include <stdio.h>
+
+int main(){
+	int x, y;
+	
+	scanf("%d", &x);
+	scanf("%d", &y);
+	
+	printf("%p\n", &x);
+	printf("%p\n", &y);
+	
+	if(&x > &y){
+		printf("O conteúdo do maior endereço é: %d", x);
+	}
+	else {
+	printf("O conteúdo do maior endereço é: %d", y);
+}
+}
+--------------------------------------------------------
+Alocação dinamica:
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+	int *x, i;
+	
+	x = (int *)malloc(5*sizeof(int));
+	printf("Digite os 5 valores\n");
+	for(i=0; i<5; i++){
+		scanf("%d", &x[i]);
+	}
+	
+	for(i=0; i<5; i++){
+		printf("%d", x[i]);
+	}
+	free(x);
+}
+------------------------------------------------------
+Arquivos(inacabado):
+#include <stdio.h>
+
+int main(){
+	FILE *fp;
+	char c;
+	
+	fp = fopen("arq.txt", "w");
+	
+	while(c!=0){
+	fprintf(fp, "%c", c);
+	
+}
+fclose(fp);
+
+fp = fopen("arq.txt", "r");
+while(!feof(fp)){
+	fscanf(fp, "%c", &c);
+	printf("%c", c);
+}
+fclose(fp);
+}
